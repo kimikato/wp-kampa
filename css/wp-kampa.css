@@ -1,0 +1,60 @@
+#kampa .ui-progressbar {
+	position: relative;
+}
+
+#kampa .progress-label {
+	width: 100%;
+	top: 4px;
+	text-align: center;
+	position: absolute;
+	vertical-align: bottom;
+	font-size: 12px;
+	font-weight: bold;
+	text-shadow: 1px 1px 0 #fff;
+}
+
+div[id^=pg-] {
+	width: 80%;
+	height: 20px;
+	margin: 10px auto;
+	background: #cccccc;
+}
+
+
+#kampa div.slides {
+	width: 100%;
+	background: #ffffff;
+}
+
+#kampa div.kampa-box {
+	width: 100%;
+	position: relative;
+	margin: auto;
+}
+
+#kampa div.kampa-box:after {
+	content: ".";
+	display: block;
+	height: 0;
+	font-size: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+#kampa div.kampa-image {
+	width: 95%;
+	height: width;
+	margin: 0 auto;
+}
+
+#kampa div.kampa-image img {
+	display: block;
+	margin: auto;
+	max-width: 160px;
+	height: 160px;
+}
+
+#kampa div.kampa-progress {
+	margin: auto;
+}
+
