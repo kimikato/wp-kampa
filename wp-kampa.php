@@ -4,7 +4,7 @@ Plugin Name: WP kampa!
 Version: 0.1
 Plugin URI: http://www.iex3.info/wordpress-plugin
 Description: The WordPress implementation of the Kampa!.
-Author: Kiminori Kato
+Author: kimikato
 Author URI: http://www.iex3.info/
 License: GPL2
 */
