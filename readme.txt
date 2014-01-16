@@ -10,7 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == Description ==
 
 wp-kampa is a widget of show items with has been registered with Kampa!
-Kampa! is a social Kampa system that be able to start from 15yen without fees.
+Kampa! is a social donation system that be able to start from 15yen without fees.
 
 Kampa!
 http://kampa.me/
@@ -22,7 +22,26 @@ http://kampa.me/
 3.Go to Appearance > Widgets and drag 'Kampa!' to your sidebar
 4.Update the settings in the widget: title, Kampa! Consumer key
 
+== Frequently Asked Questions ==
+
+= What is Kampa! ? =
+
+Kampa! is a social donation system that be able to start from 15yen without fees.
+Kampa!
+http://kampa.me/
+
+== Screenshots ==
+
+1. Edit settings in the widget: title, Kampa! Consumer key.
+2. View top page.
+
 == Changelog ==
 
 = 0.1 - 2013/10/28 =
 * Initial Release.
+
+== Upgrade Notice ==
+
+= 0.1 =
+
+Nothing.
