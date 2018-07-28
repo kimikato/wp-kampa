@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP Kampa!
-Version: 0.2
+Version: 0.2.2
 Plugin URI: https://www.29lab.jp/wordpress-plugin
 Description: WP Kampa! plugins makes it easy to post links to 'Kampa!'.
 Author: Kiminori KATO
@@ -138,7 +138,6 @@ class WpKampa {
     public function wpkampa_admin_list_page() {
         // Consumer keyの取得
         $consumer_key = $this->options["wpkampa_consumer_key"];
-        $is_consumer_key = ($consumer_key !== '') ? true : false;
 
         // List Tableの設定
         $list_table = new WpKampa_List_Table();
