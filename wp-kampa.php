@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP Kampa!
-Version: 0.2
+Version: 0.2.2
 Plugin URI: https://www.29lab.jp/wordpress-plugin
 Description: WP Kampa! plugins makes it easy to post links to 'Kampa!'.
 Author: Kiminori KATO
