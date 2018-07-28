@@ -33,7 +33,7 @@ http://kampa.me/
 == Screenshots ==
 
 1. Edit settings: Kampa! Consumer key.
-2. View top page.
+2. View the items of Kampa! in admin panel.
 
 == Changelog ==
 
