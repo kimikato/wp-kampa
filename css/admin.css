@@ -1,0 +1,18 @@
+.wpkampa_admin_list_short_code {
+    max-width: 250px;
+}
+
+.wpkampa_admin_list_example {
+    position: relative;
+    width: 480px;
+    height: 120px;
+    border: 1px solid #cccccc;
+}
+
+.wpkampa_admin_list_example iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 480px;
+    height: 120px;
+}
