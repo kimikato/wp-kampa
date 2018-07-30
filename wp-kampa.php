@@ -226,6 +226,18 @@ class WpKampa {
     }
 
     private function get_api_data($url) {
+        $json = [];
+        if (function_exists('curl_init')) {
+            $json = $this->get_json_curl($url);
+        } else {
+            $json = $this->get_json_file_get_contents($url);
+        }
+        return $json;
+    }
+
+    private function get_json_curl($url) {
+        $data = null;
+
         $option = [
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_TIMEOUT        => 3
@@ -238,7 +250,6 @@ class WpKampa {
         $info = curl_getinfo($ch);
         $errNo = curl_errno($ch);
 
-        // 
         if ($errNo !== CURLE_OK) {
             return [];
         }
@@ -247,9 +258,29 @@ class WpKampa {
             return [];
         }
 
-        $jsonArray = json_decode($json, true);
+        $data = json_decode($json, true);
 
-        return $jsonArray;
+        return $data;
+    }
+
+    private function get_json_file_get_contents($url) {
+        $data = null;
+
+        $context = stream_context_create(array(
+            'http' => array('ignore_errors' => true)
+        ));
+
+        $res = file_get_contents($url, false, $context);
+
+        $is_success = strpos($http_response_header[0], '200');
+
+        if ($is_success == false) {
+            return [];
+        } else {
+            $data = json_decode($res, true);
+        }
+
+        return $data;
     }
 }
 
