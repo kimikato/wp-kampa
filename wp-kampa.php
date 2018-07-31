@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP Kampa!
-Version: 0.2.3
+Version: 0.2.4
 Plugin URI: https://www.29lab.jp/wordpress-plugin
 Description: WP Kampa! plugins makes it easy to post links to 'Kampa!'.
 Author: Kiminori KATO
@@ -26,7 +26,7 @@ License: GPL2
  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-define('WPKAMPA_VERSION', '0.2.3');
+define('WPKAMPA_VERSION', '0.2.4');
 define('WPKAMPA_PLUGIN_DIR', untrailingslashit(dirname(__FILE__)));
 define('WPKAMPA_DOMAIN', 'wp-kampa');
 define('WPKAMPA_KAMPA_API_LIST_URL', 'http://kampa.me/api/queue/');
@@ -226,6 +226,18 @@ class WpKampa {
     }
 
     private function get_api_data($url) {
+        $json = [];
+        if (function_exists('curl_init')) {
+            $json = $this->get_json_curl($url);
+        } else {
+            $json = $this->get_json_file_get_contents($url);
+        }
+        return $json;
+    }
+
+    private function get_json_curl($url) {
+        $data = null;
+
         $option = [
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_TIMEOUT        => 3
@@ -238,7 +250,6 @@ class WpKampa {
         $info = curl_getinfo($ch);
         $errNo = curl_errno($ch);
 
-        // 
         if ($errNo !== CURLE_OK) {
             return [];
         }
@@ -247,9 +258,29 @@ class WpKampa {
             return [];
         }
 
-        $jsonArray = json_decode($json, true);
+        $data = json_decode($json, true);
 
-        return $jsonArray;
+        return $data;
+    }
+
+    private function get_json_file_get_contents($url) {
+        $data = null;
+
+        $context = stream_context_create(array(
+            'http' => array('ignore_errors' => true)
+        ));
+
+        $res = file_get_contents($url, false, $context);
+
+        $is_success = strpos($http_response_header[0], '200');
+
+        if ($is_success == false) {
+            return [];
+        } else {
+            $data = json_decode($res, true);
+        }
+
+        return $data;
     }
 }
 

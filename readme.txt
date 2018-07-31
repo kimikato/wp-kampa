@@ -3,7 +3,7 @@ Contributors: Kiminori KATO
 Tags: shortcut, kampa!
 Requires at least: 4.9
 Tested up to: 4.9.7
-Stable tag: 0.2.3
+Stable tag: 0.2.4
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,6 +45,12 @@ http://kampa.me/
 
 = 0.2.2 - 2018/07/29 =
 * Miner fixes
+
+= 0.2.3 - 2018/07/29 =
+* Miner fixes
+
+= 0.2.4 - 2018/07/31 =
+* Fixed behavior when it's not installed the library of cURL
 
 == Upgrade Notice ==
 
