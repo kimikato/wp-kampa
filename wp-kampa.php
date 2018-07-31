@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP Kampa!
-Version: 0.2.3
+Version: 0.2.4
 Plugin URI: https://www.29lab.jp/wordpress-plugin
 Description: WP Kampa! plugins makes it easy to post links to 'Kampa!'.
 Author: Kiminori KATO
@@ -26,7 +26,7 @@ License: GPL2
  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-define('WPKAMPA_VERSION', '0.2.3');
+define('WPKAMPA_VERSION', '0.2.4');
 define('WPKAMPA_PLUGIN_DIR', untrailingslashit(dirname(__FILE__)));
 define('WPKAMPA_DOMAIN', 'wp-kampa');
 define('WPKAMPA_KAMPA_API_LIST_URL', 'http://kampa.me/api/queue/');
